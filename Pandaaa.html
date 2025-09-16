@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Birthday Love Letter</title>
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #001f4d, #c62828); /* navy blue to red gradient */
+    color: #cbd2f7;
+  }
+  #heart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 8s;
+  }
+  @keyframes fadeOut {
+    to {opacity: 0; visibility: hidden;}
+  }
+  .heart {
+    width: 150px;
+    height: 150px;
+    background-color: #c62828; /* bright red heart */
+    position: relative;
+    transform: rotate(-45deg);
+    animation: heartbeat 1s infinite;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: #c62828;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .heart::before {
+    top: -75px;
+    left: 0;
+  }
+  .heart::after {
+    top: 0;
+    left: 75px;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.2); }
+  }
+  #love-text {
+    margin-top: 20px;
+    font-size: 1.8em;
+    color: #ff6f91;
+    font-weight: bold;
+    user-select: none;
+  }
+  #main-content {
+    display: none;
+    padding: 30px;
+    max-width: 700px;
+    margin: 30px auto;
+    animation: fadeIn 2s ease forwards;
+    color: #f0e9e9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 25px;
+    color: #ffd1dc;
+    text-shadow: 2px 2px 4px #4b0000;
+  }
+  p {
+    font-size: 1.3em;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  .signature {
+    margin-top: 40px;
+    font-size: 1.5em;
+    color: #ffdede;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div id="heart-container">
+  <div class="heart"></div>
+  <div id="love-text">I love you ❣</div>
+</div>
+
+<div id="main-content">
+  <h1>For My Love</h1>
+  <p>
+    My Sweetheart, 💖<br><br>
+    From the moment you walked into my life, you've imprinted a beautiful melody on my heart that plays endlessly. 🌹 Every glance, every smile from you is like a tender brushstroke painting my world in the most vibrant colors. 🌈 You are the sun that melts away my darkest clouds, the gentle breeze that soothes my soul on restless days. ☀🍃<br><br>
+    Your laughter is the sweetest music, and your touch is the warmest comfort I have ever known. 🥰 In your eyes, I see my future, a lifetime of shared dreams, whispered secrets, and countless moments embracing happiness together. 🌟💫 You inspire me every day to be the best version of myself, and I am eternally grateful for your love that feels like home. 🏡❤<br><br>
+    On this special day, I wish to shower you with all my love and remind you how deeply cherished you are. May your birthday be as extraordinary and magical as you make every day for me. 🎂✨ May the coming year bless you with endless joy, success, and beautiful memories waiting to be created side by side. 🎉💖<br><br>
+    Advanced Happy Birthday, my precious panda 🐼💕! You are my sweetest treasure, my heart's delight, and I can't wait to celebrate many more birthdays wrapped in your love. 🎁🌸 Let's make this year unforgettable, filled with laughter, love, and dreams coming true. 💞🐾
+  </p>
+  <div class="signature">Your forever 💞 penguin 🐧❤</div>
+</div>
+
+<script>
+  // After 8 seconds hide heart and show content
+  setTimeout(() => {
+    document.getElementById('heart-container').style.display = 'none';
+    const mainContent = document.getElementById('main-content');
+    mainContent.style.display = 'block';
+  }, 8000);
+</script>
+</body>
+</html>
